@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { WirisMathType } from './widget';
 
 interface AppProps {
   name: string;
@@ -16,5 +17,13 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 export default function App({ name }: AppProps) {
-  return <Container padding="1em">Hello {name}!</Container>;
+  return <Container padding="1em">
+    Hello {name}!
+    <WirisMathType
+      value={''}
+      onChange={(val: any) => {
+        console.log(val);
+      }}
+    />
+  </Container>;
 }
